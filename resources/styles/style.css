@@ -375,6 +375,7 @@ img#logo {
     background-size: cover;
     width: 25%;
     height: auto;
+    max-height: 90vh;
 }
 
 @media only screen and (max-width: 750px) {
