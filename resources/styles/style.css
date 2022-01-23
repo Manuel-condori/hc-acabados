@@ -60,18 +60,6 @@ img#logo {
     z-index: 5;
 }
 
-/* icono menu hamburguesa */
-.checkbtn{
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    display: none;
-}
-#check{
-    display: none;
-}
-
-/* ------ */
 
 .navigator {
     background-color: #BA0108;
@@ -102,6 +90,110 @@ img#logo {
     border-bottom: solid 3px #023481;
 }
 
+.menu-check {
+    display: none;
+}
+
+@media only screen and (max-width: 1025px){
+      .navigator .menu-check {
+        display: none;
+      }
+      /* icono menu*/
+      .navigator .menu-open {
+        padding: 20px 20px;
+        position: relative;
+        background: #032763;
+        box-shadow: 1px 1px 3px;
+        cursor: pointer;
+        z-index: 50;
+      }
+      /* Menu Hamburguesa OJO SPAN */
+      .navigator .menu-open span {
+        width: 40px;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -1.5px;
+        margin-left: -20px;
+        background-color: #fff;
+        font-weight: bold;
+        opacity: 1;
+        transition: 0.3s;
+      }
+      .navigator .menu-open span.burger1 {
+        transform: translate3d(0px, -10px, 0px);
+      }
+      .navigator .menu-open span.burger2 {
+        transform: translate3d(0px, 0px, 0px);
+        transition: 0.1s;
+      }
+      .navigator .menu-open span.burger3 {
+        transform: translate3d(0px, 10px, 0px);
+      }
+      .navigator .menu-check:checked + .menu-open {
+        background: #fff;
+        border: 0;
+      }
+      .navigator .menu-check:checked + .menu-open span {
+        background-color: #BA0108;
+      }
+      .navigator .menu-check:checked + .menu-open span.burger1 {
+        transform: translate3d(0px, -10px, 0px) rotate(-45deg);
+        width: 30px;
+      }
+      .navigator .menu-check:checked + .menu-open span.burger2 {
+        opacity: 0;
+      }
+      .navigator .menu-check:checked + .menu-open span.burger3 {
+        transform: translate3d(0px, 10px, 0px) rotate(45deg);
+        width: 30px;
+      }
+      .navigator .menu-options {
+        background-color: #000;
+        position: absolute;
+        width: 0;
+        top: 0;
+        left: 0;
+        padding: 80px 0px 50px;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      
+      .navigator .menu-options li {
+        color: #fff;
+        text-align: center;
+        list-style: none;
+        display: block;
+        font-weight: normal;
+      }
+      .navigator .menu-options li a {
+        text-decoration: none;
+        color: #fff;
+        line-height: 4em;
+        display: block;
+        transition: 0.5s;
+      }
+      .navigator .menu-options li.search {
+        margin-bottom: 1em;
+      }
+      .navigator .menu-options li.search .search-box {
+        width: 300px;
+        height: 35px;
+        font-size: 1em;
+        color: #fff;
+        padding: 0 15px;
+        font-weight: lighter;
+      }
+      .navigator .menu-check:checked ~ .menu-options {
+        width: 100%;
+        opacity: 1;
+      }
+
+
+
+}
+
 @media only screen and (max-width: 960px) {
     h2 {
         font-size: 1.4rem;
@@ -115,50 +207,6 @@ img#logo {
 
     img#logo {
         width: 12%;
-    }
-}
-
-@media only screen and (max-width: 1025px){
-    .navigator {
-        justify-content: flex-end;
-        padding-right: 20px; 
-    }
-    .checkbtn{
-        display: flex;
-        justify-content: flex-end;
-    }
-    .navigator ul{
-        position: absolute;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: #000;
-        opacity: 0.9;
-        top: 5vh;
-        left: -100%;
-        display: flex;
-        text-align: center;
-        transition: all .5s;
-        flex-direction: column;
-        z-index: 10;
-    }
-    .navigator ul li{
-        margin: 1.5rem 0;
-    }
-    nav ul li a{
-        font-size: 1.5rem;
-    }
-    li a:hover, li a.active{
-        border-bottom: solid 1px #BA0108;
-    }
-    #check:checked ~ ul{
-        left:0;
-    }
-
-}
-
-@media only screen and (max-width: 1025px) {
-    nav ul li a{
-        font-size: 1.2rem;
     }
 }
 
@@ -183,6 +231,13 @@ img#logo {
     nav ul li a{
         font-size: 1rem;
     }
+    .navigator .menu-open {
+        padding: 20px 20px;
+        position: relative;
+        box-shadow: 1px 1px 3px;
+        cursor: pointer;
+        z-index: 50;
+      }
     
 }
 
